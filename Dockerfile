@@ -14,4 +14,4 @@ ADD ssh/ /root/.ssh
 
 ADD run.py /run.py
 
-CMD [ "python", "./run.py" ]
+CMD [ "python3", "./run.py" ]
