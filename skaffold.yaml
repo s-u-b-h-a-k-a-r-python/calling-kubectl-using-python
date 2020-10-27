@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2beta8
+kind: Config
+metadata:
+  name: calling-kubectl-using-python
+build:
+  artifacts:
+    - image: subhakarkotta/calling-kubectl-using-python
+      docker:
+         dockerfile: Dockerfile
+  tagPolicy:
+    sha256: {}
+deploy:
+   kustomize:
+     paths: ["kustomize/base"]

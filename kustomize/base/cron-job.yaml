@@ -1,0 +1,16 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: calling-kubectl-using-python
+  namespace: calling-kubectl-using-python
+spec:
+  schedule: '*/1 * * * *'
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccount: calling-kubectl-using-python
+          containers:
+            - name: calling-kubectl-using-python
+              image: 'subhakarkotta/calling-kubectl-using-python:latest'
+          restartPolicy: OnFailure

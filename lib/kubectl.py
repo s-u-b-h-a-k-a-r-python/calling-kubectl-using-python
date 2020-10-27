@@ -67,5 +67,5 @@ class Kubectl(object):
         return downloads.exec([self.bin] + args, env=self.env).strip()
 
     def exec_and_parse_json(self, args):
-        j = downloads.exec([self.bin, "-ojson"] + args, env=self.env).strip()
+        j = downloads.exec([self.bin, "-ojson"] + args, env=self.env,print_stdout=False).strip()
         return json.loads(j)
